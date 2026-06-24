@@ -1,5 +1,3 @@
-#include <map>
-
 typedef struct sim_struct
 {
  double* c;
@@ -14,7 +12,7 @@ typedef struct sim_struct
  double* P_init;
  double* xi;
  double* psi;
-}  sim_struct;
+} sim_struct;
 
 double* get_double_p_sim_struct(sim_struct* x, char* name){
 

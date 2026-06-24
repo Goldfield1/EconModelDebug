@@ -1,10 +1,8 @@
-#include <map>
-
 typedef struct sol_struct
 {
  double* c;
  double* V;
-}  sol_struct;
+} sol_struct;
 
 double* get_double_p_sol_struct(sol_struct* x, char* name){
 

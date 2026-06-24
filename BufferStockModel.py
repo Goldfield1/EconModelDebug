@@ -137,20 +137,15 @@ class BufferStockModelClass(EconModelClass):
         par = self.par
         sol = self.sol
 
-        # 1. Initialize arrays to store today's raw EGM results
-        # (Assuming par.Na is the number of points in your asset grid)
-
-        # b. solve last period
+        # a. solve last period
         t = par.T-1
         sol.c[t,:] = par.m_grid
         sol.V[t,:] = self.util(sol.c[t,:])
 
-        # c. loop backwards [note, the last element, N, in range(N) is not included in the loop due to index starting at 0]
+        # b. loop backwards [note, the last element, N, in range(N) is not included in the loop due to index starting at 0]
         for t in range(par.T-2, -1, -1):
-            # 2. Loop over the exogenous asset grid (this replaces your missing state)
             sol_c_raw = np.zeros(par.Nm)
             sol_m_raw = np.zeros(par.Nm)
-
             for i_a, a_state in enumerate(par.m_grid):
                 
                 EV_next = 0.0
@@ -188,19 +183,11 @@ class BufferStockModelClass(EconModelClass):
             # Euler equation-derived points
             c_today_interp = np.interp(par.m_grid, sol_m_raw, sol_c_raw)
             c_today_interp = np.minimum(c_today_interp, par.m_grid)
-            #c_today_interp = np.maximum(c_today_interp, par.m_grid)
-
-            #slope = (sol_c_raw[-1] - sol_c_raw[-2]) / (sol_m_raw[-1] - sol_m_raw[-2])
-                
-            # Fill the tail using this slope
-            #mask = par.m_grid > sol_m_raw[-1]
-            #c_today_interp[mask] = sol_c_raw[-1] + slope * (par.m_grid [mask] - sol_m_raw[-1])
 
             sol.c[t, :] = c_today_interp
+            # This i snot needed, compute V for comparerability
             for i_a, a_state in enumerate(par.m_grid):
                 sol.V[t, i_a] = self.value_of_choice( sol.c[t, i_a], a_state,t)
-
-
 
 
     def value_of_choice(self,cons,resources,t):

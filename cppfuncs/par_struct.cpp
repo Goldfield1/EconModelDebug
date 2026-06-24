@@ -1,5 +1,3 @@
-#include <map>
-
 typedef struct par_struct
 {
  int T;
@@ -21,7 +19,7 @@ typedef struct par_struct
  double* xi_weight;
  double* psi_grid;
  double* psi_weight;
-}  par_struct;
+} par_struct;
 
 int get_int_par_struct(par_struct* x, char* name){
 
