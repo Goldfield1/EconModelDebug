@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010"><Type Name="sol_struct"><DisplayString>Solution (T=20, Nm=200)</DisplayString><Expand>
+        <Synthetic Name="c (Time Slices)">
+            <Expand>
+                <IndexListItems>
+                    <Size>20</Size>
+                    <ValueNode>(c) + ($i * 200), [200]</ValueNode>
+                </IndexListItems>
+            </Expand>
+        </Synthetic>
+        <Synthetic Name="V (Time Slices)">
+            <Expand>
+                <IndexListItems>
+                    <Size>20</Size>
+                    <ValueNode>(V) + ($i * 200), [200]</ValueNode>
+                </IndexListItems>
+            </Expand>
+        </Synthetic></Expand></Type></AutoVisualizer>

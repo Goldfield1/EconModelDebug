@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch C++ Debugger",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${command:python.interpreterPath}",
+            "args": ["${file}"], 
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "visualizerFile": "${workspaceFolder}/Visualizers.natvis",
+            "env": { "PYTHONPATH": "${workspaceFolder}" },
+            "justMyCode": false
+        }
+    ]
+}
