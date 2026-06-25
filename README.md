@@ -1,5 +1,14 @@
-## Guide
+# EconModel Debuggning
 
-Open file "run_model.py" and press f5, which runs the debugger.
+A small example of using the Visual Studio Code debugger with mixed language Python and C++ using EconModel package.
 
-Set breakpoints in any cpp file and the debugger should stop at that particular line.
+## Quick Start
+
+1. Open the root folder in VS Code.
+2. Open `run_model.py`, press F5 to run the debugger. Select the Python: Current File configuration if prompted.
+
+---
+
+### 1. Setting Breakpoints
+
+* In C++: Open the files inside `cppfuncs/`. Click to the left of the line numbers to set your breakpoint. When we reach that line at runtime, the debugger will stop until we allow it to continue.
