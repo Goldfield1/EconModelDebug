@@ -1,8 +1,5 @@
-# Build artifacts
-*.pdb
-*.ilk
-*.exp
-*.lib
-*.obj
-*.dll
-*.ilk
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
